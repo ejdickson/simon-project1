@@ -1,3 +1,36 @@
 body {
-    color: white
+    background: rgba(30, 50, 70, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.brightRed {
+    background: rgba(255, 0, 0, 1);
+}
+
+#redButton {
+    background: rgba(190, 0, 0, 1);
+}
+
+.brightYellow {
+    background: rgba(255, 255, 0, 1);
+}
+
+#yellowButton {
+    background: rgba(190, 190, 0, 1);
+}
+
+.brightGreen {
+    background: rgba(0, 255, 0, 1);
+}
+
+#greenButton {
+    background: rgba(0, 190, 0, 1);
+}
+
+.brightBlue {
+    background: rgba(0, 0, 255, 1);
+}
+
+#blueButton {
+    background: rgba(0, 0, 190, 1);
 }
