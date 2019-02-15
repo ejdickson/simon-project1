@@ -3,6 +3,18 @@ body {
     color: rgba(255, 255, 255, 1);
 }
 
+header {
+    display: inline-flex;
+}
+
+#menu {
+    display: inline-flex;
+}
+
+#menu img {
+    height: 20px;
+}
+
 .brightRed {
     background: rgba(255, 0, 0, 1);
 }

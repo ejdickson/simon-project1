@@ -10,6 +10,7 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+    <script defer src="./js/functions.js"></script>
     <script defer src="./js/script.js"></script>
 </head>
 <body>
@@ -24,16 +25,28 @@
         <!-- Right: Menu -> Pause (during game play, drop down menu) -->
         <div id ="menu">
             <!-- Img changes from typical bar menu to pause button during game play -->
-            <img src="#" alt="MENU">
+            <img src="./images/three-horizontal-bars.png" alt="MENU">
         </div>
     </header>
-    
+
     <main>
         <!-- divs representing each of the four game buttons -->
-        <div id="redButton">RED BUTTON</div>
-        <div id="yellowButton">YELLOW BUTTON</div>
-        <div id="greenButton">GREEN BUTTON</div>
-        <div id="blueButton">BLUE BUTTON</div>
+        <div id="redButton">
+            <p>RED BUTTON</p>
+            <audio></audio>
+        </div>
+        <div id="yellowButton">
+            <p>YELLOW BUTTON</p>
+            <audio></audio>
+        </div>
+        <div id="greenButton">
+            <p>GREEN BUTTON</p>
+            <audio></audio>
+        </div>
+        <div id="blueButton">
+            <p>BLUE BUTTON</p>
+            <audio></audio>
+        </div>
         <!-- buttons for level options -->
         <button id="easy">EASY</button>
         <button id="medium">MEDIUM</button>
