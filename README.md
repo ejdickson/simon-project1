@@ -18,8 +18,7 @@ https://trello.com/b/CCZIcDem/simon-project-1
 
 
 ### Wireframes
-<img src= ./images/wireframes.jpg>
-
+<img src= 'images/Wireframes.jpg'>
 ### Technologies Used:
 * HTML
 * CSS
