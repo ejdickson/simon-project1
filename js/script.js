@@ -8,9 +8,10 @@
 var chainEvents = [];
 var playerArray = [];
 // while player is still matching the chainEvents, add to chainEvents
-    for (i = 0; i < 20; i++) {
+
+    while (checkArray(chainEvents, playerArray)) {
         addSimon(chainEvents)
-    } 
+    }
    
 
 
