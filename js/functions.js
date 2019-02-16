@@ -7,33 +7,41 @@
     console.log(arr);
 }
 
-// function: Simon act on the chain of events for player to see and follow
-let lightSimon = function(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        // light & tone i for time
+// function: Simon act on the chain of events for player to see and follow  
+
+// light & tone i for time
+let lightSimon = function(arr, time) {
+    for (let i = 0; i < arr.length; i++) { 
         switch (arr[i]) {
             case 1:
-                console.log('one');
-                $('.greenButton').toggleClass('bright');
+                $('.greenButton').toggleClass('bright'); 
+                $('#lightsaber')[0].play();
+                setTimeout(function() { $('.greenButton').toggleClass('bright'); }, time);
+                setTimeout(function() { $('#lightsaber')[0].pause(); }, time);
                 break;
             case 2:
-                console.log('two');
                 $('.redButton').toggleClass('bright');
+                $('#lasers')[0].play();
+                setTimeout(function() { $('.redButton').toggleClass('bright'); }, time);
+                setTimeout(function() { $('#lasers')[0].pause(); }, time);
                 break;
             case 3:
-                console.log('three');
                 $('.yellowButton').toggleClass('bright');
+                $('#chewie')[0].play();
+                setTimeout(function() { $('.yellowButton').toggleClass('bright'); }, time);
+                setTimeout(function() { $('#chewie')[0].pause(); }, time);
                 break;
             case 4:
-                console.log('four');
                 $('.blueButton').toggleClass('bright');
+                $('#r2d2')[0].play();
+                setTimeout(function() { $('.blueButton').toggleClass('bright'); }, time);
+                setTimeout(function() { $('#r2d2')[0].pause(); }, time);
                 break;
-            default:
-                console.log('error!')
-
         }
     }
 }
+
+
 
 // function: take player actions and input to an array that can be compared to chain of events
 let playerMode = function() {
