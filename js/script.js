@@ -3,6 +3,11 @@
     // if medium function(1/2 second)
     // if hard function(1/4 second)
 
+// on landing page, hover buttons to see color change and hear sound
+$('.gameboard div').hover(function() {
+    $(this).toggleClass('bright');
+})
+
 // one function containing game play logic taking in time as a variable
     
 var chainEvents = [];

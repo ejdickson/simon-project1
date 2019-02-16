@@ -1,5 +1,10 @@
 body {
-    background: rgba(30, 50, 70, 1);
+    background-image: "images/starryBackground.jpeg";
+    background-color: rgba(30, 50, 70, 1);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: rgba(255, 255, 255, 1);
 }
 
@@ -15,34 +20,41 @@ header {
     height: 20px;
 }
 
-.brightRed {
+.gameboard {
+    display: grid;
+    grid-template-rows: 200px 200px;
+    grid-template-columns: 200px 200px;
+    padding: 20px;
+}
+
+.redButton.bright {
     background: rgba(255, 0, 0, 1);
 }
 
-#redButton {
+.redButton {
     background: rgba(190, 0, 0, 1);
 }
 
-.brightYellow {
+.yellowButton.bright {
     background: rgba(255, 255, 0, 1);
 }
 
-#yellowButton {
+.yellowButton {
     background: rgba(190, 190, 0, 1);
 }
 
-.brightGreen {
+.greenButton.bright {
     background: rgba(0, 255, 0, 1);
 }
 
-#greenButton {
+.greenButton {
     background: rgba(0, 190, 0, 1);
 }
 
-.brightBlue {
+.blueButton.bright {
     background: rgba(0, 0, 255, 1);
 }
 
-#blueButton {
+.blueButton {
     background: rgba(0, 0, 190, 1);
 }
