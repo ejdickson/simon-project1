@@ -8,10 +8,30 @@
 }
 
 // function: Simon act on the chain of events for player to see and follow
-let lightSimon = function(time, arr) {
+let lightSimon = function(arr) {
     for (let i = 0; i < arr.length; i++) {
-        // light i
-        // tone i 
+        // light & tone i for time
+        switch (arr[i]) {
+            case 1:
+                console.log('one');
+                $('.greenButton').toggleClass('bright');
+                break;
+            case 2:
+                console.log('two');
+                $('.redButton').toggleClass('bright');
+                break;
+            case 3:
+                console.log('three');
+                $('.yellowButton').toggleClass('bright');
+                break;
+            case 4:
+                console.log('four');
+                $('.blueButton').toggleClass('bright');
+                break;
+            default:
+                console.log('error!')
+
+        }
     }
 }
 

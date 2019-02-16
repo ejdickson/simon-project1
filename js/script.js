@@ -14,10 +14,15 @@ var chainEvents = [];
 var playerArray = [];
 // while player is still matching the chainEvents, add to chainEvents
 
-    while (checkArray(chainEvents, playerArray)) {
-        addSimon(chainEvents)
-    }
+    // while (checkArray(chainEvents, playerArray)) {
+    //     addSimon(chainEvents)
+    //     lightSimon(chainEvents)
+    // }
    
+    for (i = 0; i < 20; i++) {
+        addSimon(chainEvents);
+        lightSimon(chainEvents);
+    }
 
 
     // if player array matches event chain array
