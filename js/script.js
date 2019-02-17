@@ -20,8 +20,10 @@ var playerScore = -1;
     while (checkArray(chainEvents, playerArray) === true) {
         addSimon(chainEvents);
         lightSimon(chainEvents, 1000);
+        playerAction(playerArray, 1000);
         playerScore = Number(playerScore) + 1;
         $('#score h3').text(playerScore);
+        
     }
 
 

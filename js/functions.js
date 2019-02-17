@@ -1,16 +1,16 @@
 // one sheet of all the functions that will be called during game play
 
  // function: add to chain of events array by random number generator (1-4), each number represents a color
-let addSimon = function(arr) {
+let addSimon = function(arr1) {
     let nextLight = ((Math.floor(Math.random() * 4) + 1));
-    arr.push(nextLight);
-    console.log(arr);
+    arr1.push(nextLight);
+    console.log(arr1);
 }
 
 // function: Simon actions (light & tone i for time)
-let lightSimon = function(arr, time) {
-    for (let i = 0; i < arr.length; i++) { 
-        switch (arr[i]) {
+let lightSimon = function(arr1, time) {
+    for (let i = 0; i < arr1.length; i++) { 
+        switch (arr1[i]) {
             case 1:
                 $('.greenButton').toggleClass('bright'); 
                 $('#lightsaber')[0].play();
@@ -50,7 +50,52 @@ let lightSimon = function(arr, time) {
 
 
 // function: take player actions and input to an array that can be compared to chain of events
-// $('.gameboard div').click(function() {
+
+let playerAction = function(arr2, time) {
+    $('.gameboard').click(function(e) {
+        switch (target = $(e.target)) {
+            case (target.is('.greenButton')):
+                $('.greenButton').toggleClass('bright'); 
+                $('#lightsaber')[0].play();
+                setTimeout(function() { 
+                    $('.greenButton').toggleClass('bright'); 
+                    $('#lightsaber')[0].pause(); 
+                }, time);
+                arr2.push('1');
+                break;
+            case (target.is('.redButton')):
+                $('.redButton').toggleClass('bright');
+                $('#lasers')[0].play();
+                setTimeout(function() { 
+                    $('.redButton').toggleClass('bright'); 
+                    $('#lasers')[0].pause(); 
+                }, time);
+                arr2.push('2');
+                break;
+            case (target.is('.yellowButton')):
+                $('.yellowButton').toggleClass('bright');
+                $('#chewie')[0].play();
+                setTimeout(function() { 
+                    $('.yellowButton').toggleClass('bright');
+                    $('#chewie')[0].pause(); 
+                }, time);
+                arr2.push('3');
+                break;
+            case (target.is('.blueButton')):
+                $('.blueButton').toggleClass('bright');
+                $('#r2d2')[0].play();
+                setTimeout(function() { 
+                    $('.blueButton').toggleClass('bright');
+                    $('#r2d2')[0].pause(); 
+                }, time);
+                arr2.push('4');
+                break;
+        }
+    })
+}
+
+
+// 
 //     $(this).toggleClass('bright');
 //     $(this 'audio')[0].play();
 //     setTimeout(function() { 
