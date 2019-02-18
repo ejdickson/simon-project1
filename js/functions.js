@@ -16,15 +16,13 @@ let lightSimon = function(arr1, time) {
                 $('#lightsaber')[0].play();
                 setTimeout(function() { 
                     $('.greenButton').toggleClass('bright'); 
-                    $('#lightsaber')[0].pause(); 
                 }, time);
                 break;
             case 2:
                 $('.redButton').toggleClass('bright');
                 $('#lasers')[0].play();
                 setTimeout(function() { 
-                    $('.redButton').toggleClass('bright'); 
-                    $('#lasers')[0].pause(); 
+                    $('.redButton').toggleClass('bright');
                 }, time);
                 break;
             case 3:
@@ -32,7 +30,6 @@ let lightSimon = function(arr1, time) {
                 $('#chewie')[0].play();
                 setTimeout(function() { 
                     $('.yellowButton').toggleClass('bright');
-                    $('#chewie')[0].pause(); 
                 }, time);
                 break;
             case 4:
@@ -40,7 +37,6 @@ let lightSimon = function(arr1, time) {
                 $('#r2d2')[0].play();
                 setTimeout(function() { 
                     $('.blueButton').toggleClass('bright');
-                    $('#r2d2')[0].pause(); 
                 }, time);
                 break;
         }
@@ -52,57 +48,48 @@ let lightSimon = function(arr1, time) {
 // function: take player actions and input to an array that can be compared to chain of events
 
 let playerAction = function(arr2, time) {
-    $('.gameboard').click(function(e) {
-        switch (target = $(e.target)) {
-            case (target.is('.greenButton')):
+        $('.greenButton').click(function() {
                 $('.greenButton').toggleClass('bright'); 
                 $('#lightsaber')[0].play();
                 setTimeout(function() { 
                     $('.greenButton').toggleClass('bright'); 
                     $('#lightsaber')[0].pause(); 
                 }, time);
-                arr2.push('1');
-                break;
-            case (target.is('.redButton')):
+                arr2.push(1);
+                console.log(arr2);
+        });
+        $('.redButton').click(function() {
                 $('.redButton').toggleClass('bright');
                 $('#lasers')[0].play();
                 setTimeout(function() { 
                     $('.redButton').toggleClass('bright'); 
                     $('#lasers')[0].pause(); 
                 }, time);
-                arr2.push('2');
-                break;
-            case (target.is('.yellowButton')):
+                arr2.push(2);
+                console.log(arr2);
+        });
+        $('.yellowButton').click(function() {
                 $('.yellowButton').toggleClass('bright');
                 $('#chewie')[0].play();
                 setTimeout(function() { 
                     $('.yellowButton').toggleClass('bright');
                     $('#chewie')[0].pause(); 
                 }, time);
-                arr2.push('3');
-                break;
-            case (target.is('.blueButton')):
+                arr2.push(3);
+                console.log(arr2);
+        });
+        $('.blueButton').click(function() {
                 $('.blueButton').toggleClass('bright');
                 $('#r2d2')[0].play();
                 setTimeout(function() { 
                     $('.blueButton').toggleClass('bright');
                     $('#r2d2')[0].pause(); 
                 }, time);
-                arr2.push('4');
-                break;
-        }
-    })
+                arr2.push(4);
+                console.log(arr2);
+        });
 }
 
-
-// 
-//     $(this).toggleClass('bright');
-//     $(this 'audio')[0].play();
-//     setTimeout(function() { 
-//         $(this).toggleClass('bright');
-//         $(this 'audio')[0].pause(); 
-//     }, time);
-// })
 
 // function: compare player's action to the chain of events created by Simon
 let checkArray = function(arr1, arr2) {

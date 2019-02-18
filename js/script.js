@@ -4,9 +4,9 @@
     // if hard function(time 750)
 
 // on any page, hover buttons to see color change and hear sound
-$('.gameboard div').hover(function() {
-    $(this).toggleClass('bright');
-})
+// $('.gameboard div').hover(function() {
+//     $(this).toggleClass('bright');
+// })
 
 // one function containing game play logic taking in time as a variable
 
@@ -15,16 +15,26 @@ $('.gameboard div').hover(function() {
 var chainEvents = [];
 var playerArray = [];
 var playerScore = -1;
+
+// first move
+
+addSimon(chainEvents);
+lightSimon(chainEvents, 1000);
+
+playerAction(playerArray, 1000);
+
+
 // while player is still matching the chainEvents, add to chainEvents
 
-    while (checkArray(chainEvents, playerArray) === true) {
-        addSimon(chainEvents);
-        lightSimon(chainEvents, 1000);
-        playerAction(playerArray, 1000);
-        playerScore = Number(playerScore) + 1;
-        $('#score h3').text(playerScore);
+    // while (checkArray(chainEvents, playerArray) === true) {
+    //     addSimon(chainEvents);
+    //     lightSimon(chainEvents, 1000);
+    //     playerAction(playerArray, 1000);
+
+    //     playerScore = Number(playerScore) + 1;
+    //     $('#score h3').text(playerScore);
         
-    }
+    // }
 
 
 
