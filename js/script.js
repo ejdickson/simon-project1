@@ -1,9 +1,9 @@
 // if statement for selecting easy/medium/hard button
-    // if easy function(time 1000)
-    // if medium function(time 500)
-    // if hard function(time 750)
+    // if easy function(time = 1000)
+    // if medium function(time = 500)
+    // if hard function(time = 750)
 
-// on any page, hover buttons to see color change and hear sound
+// on any page, hover buttons to see color change
 // $('.gameboard div').hover(function() {
 //     $(this).toggleClass('bright');
 // })
@@ -14,7 +14,7 @@
     
 var chainEvents = [];
 var playerArray = [];
-var playerScore = -1;
+var playerScore = 0;
 
 // first move
 
@@ -23,18 +23,24 @@ lightSimon(chainEvents, 1000);
 
 playerAction(playerArray, 1000);
 
+if (playerArray === chainEvents) {
+    while (checkArray(chainEvents, playerArray) === true) {
+        addSimon(chainEvents);
+        lightSimon(chainEvents, 1000);
+        playerAction(playerArray, 1000);
+
+        playerScore = Number(playerScore) + 1;
+        $('#score h3').text(playerScore);
+        
+    }
+} else {
+    console.log('GAME OVER!');
+}
+
 
 // while player is still matching the chainEvents, add to chainEvents
 
-    // while (checkArray(chainEvents, playerArray) === true) {
-    //     addSimon(chainEvents);
-    //     lightSimon(chainEvents, 1000);
-    //     playerAction(playerArray, 1000);
-
-    //     playerScore = Number(playerScore) + 1;
-    //     $('#score h3').text(playerScore);
-        
-    // }
+    
 
 
 

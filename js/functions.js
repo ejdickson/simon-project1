@@ -15,7 +15,9 @@ let lightSimon = function(arr1, time) {
                 $('.greenButton').toggleClass('bright'); 
                 $('#lightsaber')[0].play();
                 setTimeout(function() { 
-                    $('.greenButton').toggleClass('bright'); 
+                    $('.greenButton').toggleClass('bright');
+                    $('#lightsaber')[0].pause();
+                    $('#lightsaber')[0].currentTime = 0;
                 }, time);
                 break;
             case 2:
@@ -23,6 +25,8 @@ let lightSimon = function(arr1, time) {
                 $('#lasers')[0].play();
                 setTimeout(function() { 
                     $('.redButton').toggleClass('bright');
+                    $('#lasers')[0].pause();
+                    $('#lasers')[0].currentTime = 0;
                 }, time);
                 break;
             case 3:
@@ -30,6 +34,8 @@ let lightSimon = function(arr1, time) {
                 $('#chewie')[0].play();
                 setTimeout(function() { 
                     $('.yellowButton').toggleClass('bright');
+                    $('#chewie')[0].pause();
+                    $('#chewie')[0].currentTime = 0;
                 }, time);
                 break;
             case 4:
@@ -37,6 +43,8 @@ let lightSimon = function(arr1, time) {
                 $('#r2d2')[0].play();
                 setTimeout(function() { 
                     $('.blueButton').toggleClass('bright');
+                    $('#r2d2')[0].pause();
+                    $('#r2d2')[0].currentTime = 0;
                 }, time);
                 break;
         }
@@ -53,40 +61,40 @@ let playerAction = function(arr2, time) {
                 $('#lightsaber')[0].play();
                 setTimeout(function() { 
                     $('.greenButton').toggleClass('bright'); 
-                    $('#lightsaber')[0].pause(); 
+                    $('#lightsaber')[0].pause();
+                    $('#lightsaber')[0].currentTime = 0;
                 }, time);
                 arr2.push(1);
-                console.log(arr2);
         });
         $('.redButton').click(function() {
                 $('.redButton').toggleClass('bright');
                 $('#lasers')[0].play();
                 setTimeout(function() { 
-                    $('.redButton').toggleClass('bright'); 
-                    $('#lasers')[0].pause(); 
+                    $('.redButton').toggleClass('bright');
+                    $('#lasers')[0].pause();
+                    $('#lasers')[0].currentTime = 0;
                 }, time);
                 arr2.push(2);
-                console.log(arr2);
         });
         $('.yellowButton').click(function() {
                 $('.yellowButton').toggleClass('bright');
                 $('#chewie')[0].play();
                 setTimeout(function() { 
                     $('.yellowButton').toggleClass('bright');
-                    $('#chewie')[0].pause(); 
+                    $('#chewie')[0].pause();
+                    $('#chewie')[0].currentTime = 0;
                 }, time);
                 arr2.push(3);
-                console.log(arr2);
         });
         $('.blueButton').click(function() {
                 $('.blueButton').toggleClass('bright');
                 $('#r2d2')[0].play();
                 setTimeout(function() { 
                     $('.blueButton').toggleClass('bright');
-                    $('#r2d2')[0].pause(); 
+                    $('#r2d2')[0].pause();
+                    $('#r2d2')[0].currentTime = 0;
                 }, time);
                 arr2.push(4);
-                console.log(arr2);
         });
 }
 
