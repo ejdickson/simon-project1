@@ -44,18 +44,15 @@ let lightBlue = function(time) {
 
 
  // function: add to chain of events array by random number generator (1-4), each number represents a color
-let addSimon = function(arr1) {
+
+ let addSimon = function(arr1) {
     let nextLight = ((Math.floor(Math.random() * 4) + 1));
     arr1.push(nextLight);
     console.log(arr1);
 }
 
 // function: Simon actions (light & tone i for time)
-// const lightSimon = async (arr1, time) => {
-//     await asyncForEach(arr1, async ())
 
-//     console.log(arr1)
-// }
 let lightSimon = function(arr1, time) {
     for (let i = 0; i < arr1.length; i++) { 
         switch (arr1[i]) {
@@ -75,46 +72,60 @@ let lightSimon = function(arr1, time) {
     }
 }
 
-
-
 // function: take player actions and input to an array that can be compared to chain of events
 
-let playerAction = function(arr2, time) {
+let playerAction = function(arr1, arr2, time) {
     $('.greenButton').click(function() {
         lightGreen(time);
         arr2.push(1);
         console.log(arr2);
+        checkArray(arr1, arr2);
     });
     $('.redButton').click(function() {
         lightRed(time);
         arr2.push(2);
         console.log(arr2);
+        checkArray(arr1, arr2);
     });
     $('.yellowButton').click(function() {
         lightYellow(time);
         arr2.push(3);
         console.log(arr2);
+        checkArray(arr1, arr2);
     });
     $('.blueButton').click(function() {
         lightBlue(time);
         arr2.push(4);
         console.log(arr2);
+        checkArray(arr1, arr2);
     });
 }
 
+// function: start new round
+
+let newRound = function(arr1, arr2, time) {
+    // let arr2=[];
+    addSimon(arr1);
+    lightSimon(arr1, time);
+
+    playerAction(arr1, arr2, time);
+}
 
 // function: compare player's action to the chain of events created by Simon
+
 let checkArray = function(arr1, arr2) {
-    i = 0;
-    while (i < arr1.length + 1) {
+    let index = 0;
+    while (index < arr2.length) {
         // if playerArray === chainEvents, keep going
-        if ((arr2[i]) === (arr1[i])) {
-            i++
-        } else {
+        if ((arr2[index]) !== (arr1[index])) {
             //game over
-            console.log("Game Over")
-            return false
+            console.log("Game Over");
+            return false;
+        } else {
+            console.log("compared them");
         }
-    return true
-    }
+        console.log("Keep going!")
+        index++
+    } 
+    return true;
 }

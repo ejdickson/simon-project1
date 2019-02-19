@@ -2,86 +2,57 @@
 
 // count down 3...2...1 go!
 
-async function playGame(time) {
+function playGame(time) {
     // reset Simon Chain, Player Chain, and Player Score when starting a new game
-    var chainEvents = [];
+    var chainEvents = [1, 2, 3, 4];
     var playerArray = [];
     var playerScore = 0;
 
     // first move
 
-    addSimon(chainEvents);
-    lightSimon(chainEvents, time);
+    newRound(chainEvents, playerArray, time)
+    console.log('new round started')
 
-    playerAction(playerArray, time);
+    // check check player moves against Simon moves
 
-    // check check player moves
+    // if (playerArray.length === chainEvents.length) {
+    //     if (checkArray(chainEvents, playerArray)) {
+    //         // update score
+    //         playerScore = Number(playerScore) + Number(1);
+    //         $('#score h3').text(playerScore);
+    //         console.log("Score updated. Keep going!")
 
-    // await checkArray(chainEvents, playerArray)
-
-    if (playerArray.length === chainEvents.length) {
-        console.log("Checking Arrays")
-        let compare = checkArray(chainEvents, playerArray)
-        if (compare === true) {
-            
-            // update score
-            playerScore = Number(playerScore) + 1;
-            $('#score h3').text(playerScore);
-            console.log("Keep going!")
-
-            //start new round
-            addSimon(chainEvents);
-            lightSimon(chainEvents, time);
-            playerAction(playerArray, time);
-            
-        } else {
-            console.log("Game Over")
-        }
-    }
-
+    //         newRound(chainEvents, playerArray, time)
+                
+    //     } else {
+    //         console.log("GAME OVER")
+    //     }
+    // } 
 
 }
 
+
 // selecting easy/medium/hard button
-// once choose one, toggle hidden
+// once choosen level, buttons are hidden
     // if easy function(time = 1000)
     $('#easy').click(function() {
-        playGame(1000);
         $('.levels').hide();
+        $('#score h3').text(0);
+        playGame(1000);
     });
     // if medium function(time = 500)
     $('#medium').click(function() {
-        playGame(750)
         $('.levels').hide();
+        $('#score h3').text(0);
+        playGame(750);
     });
     // if hard function(time = 750)
     $('#hard').click(function() {
-        playGame(500)
         $('.levels').hide();
+        $('#score h3').text(0);
+        playGame(500);
     });
     
-
-
-
-
-
-
-
-
-
-
-
-// while player is still matching the chainEvents, add to chainEvents
-
-
-
-
-
-    // if player array matches event chain array
-        // add 1 to score
-        // add another event to chain
-    // if player array does not match event chain array
-        // alert game over
 
 
 // game over function
