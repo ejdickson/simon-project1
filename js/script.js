@@ -1,19 +1,8 @@
-// if statement for selecting easy/medium/hard button
-    // if easy function(time = 1000)
-    // if medium function(time = 500)
-    // if hard function(time = 750)
-    // once choose one, toggle hidden
-
-// on any page, hover buttons to see color change
-// $('.gameboard div').hover(function() {
-//     $(this).toggleClass('bright');
-// })
-
-// one function containing game play logic taking in time as a variable
+// one function containing main game play logic taking in time as a variable
 
 // count down 3...2...1 go!
 
-async function playGame() {
+async function playGame(time) {
     // reset Simon Chain, Player Chain, and Player Score when starting a new game
     var chainEvents = [];
     var playerArray = [];
@@ -22,35 +11,58 @@ async function playGame() {
     // first move
 
     addSimon(chainEvents);
-    lightSimon(chainEvents, 1000);
+    lightSimon(chainEvents, time);
 
-    playerAction(playerArray, 1000);
+    playerAction(playerArray, time);
 
     // check check player moves
 
     // await checkArray(chainEvents, playerArray)
 
-    // if (playerArray === chainEvents) {
-    //     while (checkArray(chainEvents, playerArray) === true) {
+    if (playerArray.length === chainEvents.length) {
+        console.log("Checking Arrays")
+        let compare = checkArray(chainEvents, playerArray)
+        if (compare === true) {
             
-    //         // update score
-    //         playerScore = Number(playerScore) + 1;
-    //         $('#score h3').text(playerScore);
+            // update score
+            playerScore = Number(playerScore) + 1;
+            $('#score h3').text(playerScore);
+            console.log("Keep going!")
 
-    //         //start new round
-    //         addSimon(chainEvents);
-    //         lightSimon(chainEvents, 1000);
-    //         playerAction(playerArray, 1000);
+            //start new round
+            addSimon(chainEvents);
+            lightSimon(chainEvents, time);
+            playerAction(playerArray, time);
             
-    //     }
-    // } else {
-    //     console.log('GAME OVER!');
-    // }
+        } else {
+            console.log("Game Over")
+        }
+    }
 
 
 }
 
-playGame()
+// selecting easy/medium/hard button
+// once choose one, toggle hidden
+    // if easy function(time = 1000)
+    $('#easy').click(function() {
+        playGame(1000);
+        $('.levels').hide();
+    });
+    // if medium function(time = 500)
+    $('#medium').click(function() {
+        playGame(750)
+        $('.levels').hide();
+    });
+    // if hard function(time = 750)
+    $('#hard').click(function() {
+        playGame(500)
+        $('.levels').hide();
+    });
+    
+
+
+
 
 
 

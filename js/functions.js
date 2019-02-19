@@ -83,18 +83,22 @@ let playerAction = function(arr2, time) {
     $('.greenButton').click(function() {
         lightGreen(time);
         arr2.push(1);
+        console.log(arr2);
     });
     $('.redButton').click(function() {
         lightRed(time);
         arr2.push(2);
+        console.log(arr2);
     });
     $('.yellowButton').click(function() {
         lightYellow(time);
         arr2.push(3);
+        console.log(arr2);
     });
     $('.blueButton').click(function() {
         lightBlue(time);
         arr2.push(4);
+        console.log(arr2);
     });
 }
 
