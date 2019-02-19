@@ -75,58 +75,59 @@ let lightSimon = function(arr1, time) {
 // function: take player actions and input to an array that can be compared to chain of events
 // let index = 0;
 
-let playerAction = function(arr1, arr2, time) {
-    $('.greenButton').click(function() {
-        lightGreen(time);
-        arr2.push(1);
-        console.log('player: ', arr2);
-        index = 0;
-        checkArray(arr1, arr2);
-        if (playerArray.length === chainEvents.length) {
-            checkWin();
-        };
-    });
-    $('.redButton').click(function() {
-        lightRed(time);
-        arr2.push(2);
-        console.log('player: ', arr2);
-        index = 0;
-        checkArray(arr1, arr2);
-        if (playerArray.length === chainEvents.length) {
-            checkWin();
-        };
-    });
-    $('.yellowButton').click(function() {
-        lightYellow(time);
-        arr2.push(3);
-        console.log('player: ', arr2);
-        index = 0;
-        checkArray(arr1, arr2);
-        if (playerArray.length === chainEvents.length) {
-            checkWin();
-        };
-    });
-    $('.blueButton').click(function() {
-        lightBlue(time);
-        arr2.push(4);
-        console.log('player: ', arr2);
-        index = 0;
-        checkArray(arr1, arr2);
-        if (playerArray.length === chainEvents.length) {
-            checkWin();
-        };
-    });
-}
+// let playerAction = function(arr1, arr2, time) {
+    // $('.greenButton').click(function() {
+    //     lightGreen(time);
+    //     arr2.push(1);
+    //     console.log('player: ', arr2);
+    //     index = 0;
+    //     checkArray(arr1, arr2);
+    //     if (playerArray.length === chainEvents.length) {
+    //         checkWin();
+    //     };
+    // });
+    // $('.redButton').click(function() {
+    //     lightRed(time);
+    //     arr2.push(2);
+    //     console.log('player: ', arr2);
+    //     index = 0;
+    //     checkArray(arr1, arr2);
+    //     if (playerArray.length === chainEvents.length) {
+    //         checkWin();
+    //     };
+    // });
+    // $('.yellowButton').click(function() {
+    //     lightYellow(time);
+    //     arr2.push(3);
+    //     console.log('player: ', arr2);
+    //     index = 0;
+    //     checkArray(arr1, arr2);
+    //     if (playerArray.length === chainEvents.length) {
+    //         checkWin();
+    //     };
+    // });
+    // $('.blueButton').click(function() {
+    //     lightBlue(time);
+    //     arr2.push(4);
+    //     console.log('player: ', arr2);
+    //     index = 0;
+    //     checkArray(arr1, arr2);
+    //     if (playerArray.length === chainEvents.length) {
+    //         checkWin();
+    //     };
+    // });
+// }
 
 // function: start new round
 
 let newRound = function(arr1, arr2, time) {
+
     console.log('New ROUND')
     addSimon(arr1);
     lightSimon(arr1, time);
     console.log("simon: ", arr1);
 
-    playerAction(arr1, arr2, time);
+    // playerAction(arr1, arr2, time);
 }
 
 // function: compare player's action to the chain of events created by Simon
@@ -158,7 +159,6 @@ let checkWin = function(arr1, arr2, time) {
             $('#score h3').text(playerScore);
             console.log("Score updated. Keep going!");
 
-            arr2 = [];
             newRound(arr1, arr2, time);
                 
     }

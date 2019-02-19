@@ -14,25 +14,50 @@ function playGame(time) {
     newRound(chainEvents, playerArray, time);
 
     // check check player moves against Simon moves
+
+    $('.greenButton').click(function() {
+        lightGreen(time);
+        playerArray.push(1);
+        console.log('player: ', playerArray);
+        index = 0;
+        checkArray(chainEvents, playerArray);
+        if (playerArray.length === chainEvents.length) {
+            checkWin();
+        };
+    });
+    $('.redButton').click(function() {
+        lightRed(time);
+        playerArray.push(2);
+        console.log('player: ', playerArray);
+        index = 0;
+        checkArray(chainEvents, playerArray);
+        if (playerArray.length === chainEvents.length) {
+            checkWin();
+        };
+    });
+    $('.yellowButton').click(function() {
+        lightYellow(time);
+        playerArray.push(3);
+        console.log('player: ', playerArray);
+        index = 0;
+        checkArray(chainEvents, playerArray);
+        if (playerArray.length === chainEvents.length) {
+            checkWin();
+        };
+    });
+    $('.blueButton').click(function() {
+        lightBlue(time);
+        playerArray.push(4);
+        console.log('player: ', playerArray);
+        index = 0;
+        checkArray(chainEvents, playerArray);
+        if (playerArray.length === chainEvents.length) {
+            checkWin();
+        };
+    });
     
 
 }
-
-// checkWin = (time) => {
-//     // if (playerArray.length === chainEvents.length) {
-//         if (checkArray(chainEvents, playerArray) === true) {
-//             // update score
-//             playerScore = Number(playerScore) + Number(1);
-//             $('#score h3').text(playerScore);
-//             console.log("Score updated. Keep going!");
-
-//             playerArray = [];
-//             newRound(chainEvents, playerArray, time);
-                
-//         } else if (checkArray(chainEvents, playerArray) === false) {
-//             alert("GAME OVER");
-//         }
-// }
 
 
 
