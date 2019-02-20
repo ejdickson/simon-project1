@@ -93,3 +93,9 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.main-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
