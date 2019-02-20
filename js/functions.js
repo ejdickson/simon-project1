@@ -4,43 +4,43 @@
 // arr2 = playerArray (player actions array)
 // time = depends on level selected
 
-// function: one for each of the light & tone buttons
+// function: one function for each of the colored buttons (lights and tones to call for player/simon later)
 
 let lightGreen = function(time) {
-    $('.greenButton').toggleClass('bright'); 
+    $('.greenButton').addClass('bright'); 
     $('#lightsaber')[0].play();
     setTimeout(function() { 
-        $('.greenButton').toggleClass('bright');
+        $('.greenButton').removeClass('bright');
         $('#lightsaber')[0].pause();
         $('#lightsaber')[0].currentTime = 0;
     }, time);
 }
 
 let lightRed = function(time) {
-    $('.redButton').toggleClass('bright');
+    $('.redButton').addClass('bright');
     $('#lasers')[0].play();
     setTimeout(function() { 
-        $('.redButton').toggleClass('bright');
+        $('.redButton').removeClass('bright');
         $('#lasers')[0].pause();
         $('#lasers')[0].currentTime = 0;
     }, time);
 }
 
 let lightYellow = function(time) {
-    $('.yellowButton').toggleClass('bright');
+    $('.yellowButton').addClass('bright');
     $('#chewie')[0].play();
     setTimeout(function() { 
-        $('.yellowButton').toggleClass('bright');
+        $('.yellowButton').removeClass('bright');
         $('#chewie')[0].pause();
         $('#chewie')[0].currentTime = 0;
     }, time);
 }
 
 let lightBlue = function(time) {
-    $('.blueButton').toggleClass('bright');
+    $('.blueButton').addClass('bright');
     $('#r2d2')[0].play();
     setTimeout(function() { 
-        $('.blueButton').toggleClass('bright');
+        $('.blueButton').removeClass('bright');
         $('#r2d2')[0].pause();
         $('#r2d2')[0].currentTime = 0;
     }, time);
@@ -51,28 +51,32 @@ let lightBlue = function(time) {
 
  let addSimon = function(arr1) {
     let nextLight = ((Math.floor(Math.random() * 4) + 1));
-    arr1.push(nextLight);
+    lastLight = chainEvents[chainEvents.length - 1];
+    while (nextLight === lastLight) {
+        nextLight = ((Math.floor(Math.random() * 4) + 1));
+    }
+     arr1.push(nextLight);
 }
 
 // function: Simon actions (light & tone i for time)
-
-let lightSimon = function(arr1, time) {
-    for (let i = 0; i < arr1.length; i++) { 
-        switch (arr1[i]) {
-            case 1:
-                lightGreen(time);
-                break;
-            case 2:
-                lightRed(time);
-                break;
-            case 3:
-                lightYellow(time);
-                break;
-            case 4:
-                lightBlue(time);
-                break;
+let lightSimon = function(arr1) {
+    let currentIndex = 0;
+    let gameInterval = setInterval(() => {
+        if (currentIndex <= arr1.length) {
+            if (arr1[currentIndex] == 1) {
+                lightGreen(1000);
+            } else if (arr1[currentIndex] == 2) {
+                lightRed(1000);
+            } else if (arr1[currentIndex] == 3) {
+                lightYellow(1000);
+            } else if (arr1[currentIndex] == 4) {
+                lightBlue(1000);
+            }
+            currentIndex++
+        } else {
+            return clearInterval(gameInterval)
         }
-    }
+    }, 1000)
 }
 
 // function: start new round
@@ -85,7 +89,7 @@ let newRound = function(arr1, arr2, time) {
     console.log("simon: ", arr1);
 }
 
-// function: compare player's action to the chain of events created by Simon
+// function: compare every player's action to the chain of events created by Simon
 
 let checkArray = function(arr1, arr2, time) {
     let index = 0;
@@ -106,6 +110,8 @@ let checkArray = function(arr1, arr2, time) {
     console.log('check round now');
     return true;
 }
+
+// function: compare player to Simon at the end of the round to add to score and reset player for next round
 
 let checkWinRound = function(arr1, arr2, time) {
     if (arr2.length === arr1.length) {
@@ -136,8 +142,7 @@ let resetGame = function(arr1, arr2) {
 
 
 // game over function
-    // if player score > lowest leaderboard score [leaderboard array/objects]
-        // add player score to leader board in position [maybe switch statement?]
+    // if player score > leaderboard score
 
 let gameOver = function(newScore, topScore) {
     if (newScore > topScore) {

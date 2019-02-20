@@ -6,12 +6,16 @@ var chainEvents = [];
 var playerArray = [];
 var playerScore = 0;
 var highestScore = 0;
-var loser = false;
+var easy = 1000;
+var medium = 750;
+var hard = 500;
+
+$('#score h3').text(`Top Score: ${highestScore}`);
 
 function playGame(time) {
-    // reset Simon Chain, Player Chain, and Player Score when starting a new game
 
-    // first move
+    // first move is made by Simon
+
     newRound(chainEvents, playerArray, time);
 
     // log player moves
@@ -76,7 +80,7 @@ function playGame(time) {
         console.log('New Game');
         resetGame(chainEvents, playerArray);
         playerScore = 0;
-        playGame(1000);
+        playGame(easy);
     });
     // if medium function(time = 500)
     $('#medium').click(function() {
@@ -84,7 +88,7 @@ function playGame(time) {
         console.log('New Game');
         resetGame(chainEvents, playerArray);
         playerScore = 0;
-        playGame(750);
+        playGame(medium);
     });
     // if hard function(time = 750)
     $('#hard').click(function() {
@@ -92,6 +96,6 @@ function playGame(time) {
         console.log('New Game');
         resetGame(chainEvents, playerArray);
         playerScore = 0
-        playGame(500);
+        playGame(hard);
     });
     
