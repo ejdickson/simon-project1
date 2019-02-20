@@ -94,7 +94,6 @@ let checkArray = function(arr1, arr2, time) {
         // if arr2 === chainEvents, keep going
         if ((arr2[index]) !== (arr1[index])) {
             //game over
-            console.log("one wrong move means Game Over");
             gameOver(playerScore, highestScore, chainEvents, playerArray);
             return false;
         }
@@ -105,11 +104,9 @@ let checkArray = function(arr1, arr2, time) {
     if (arr1.length === arr2.length) {
         if ((arr1[iarr1]) !== (arr2[iarr2])) {
             //game over
-            console.log("one wrong move means Game Over");
             gameOver(playerScore, highestScore, chainEvents, playerArray);
             return false;
         } else {
-            console.log("Keep going!");
             checkWinRound(arr1, arr2, time);
         }
     }
@@ -123,7 +120,6 @@ let checkWinRound = function(arr1, arr2, time) {
         // update score
         playerScore = Number(playerScore) + Number(1);
         $('#score h3').text(playerScore);
-        console.log("Score updated. Keep going!");
             
         // reset player chain and add another round of Simon
         resetPlayer(arr2);

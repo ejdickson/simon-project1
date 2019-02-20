@@ -83,9 +83,5 @@ function playGame(time) {
         var playerArray = [];
         var playerScore = 0;
         resetGame(chainEvents, playerArray);
-        console.log('after reset game')
-        console.log(chainEvents)
-        console.log(playerArray)
-
     });
     
