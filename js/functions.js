@@ -116,8 +116,6 @@ let checkArray = function(arr1, arr2, time) {
             checkWinRound(arr1, arr2, time);
         }
     }
-    console.log('check round now');
-    return true;
 }
 
 // function: compare player to Simon at the end of the round to add to score and reset player for next round
