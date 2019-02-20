@@ -100,10 +100,22 @@ let checkArray = function(arr1, arr2, time) {
             return false;
         } else {
             console.log("Keep going!");
-            checkWinRound(arr1, arr2, time);
         }
         index++;
     } 
+    let iarr1 = arr1.length - 1;
+    let iarr2 = arr2.length - 1;
+    if (arr1.length === arr2.length) {
+        if ((arr1[iarr1]) !== (arr2[iarr2])) {
+            //game over
+            console.log("one wrong move means Game Over");
+            gameOver(playerScore, highestScore);
+            return false;
+        } else {
+            console.log("Keep going!");
+            checkWinRound(arr1, arr2, time);
+        }
+    }
     console.log('check round now');
     return true;
 }
@@ -112,6 +124,7 @@ let checkArray = function(arr1, arr2, time) {
 
 let checkWinRound = function(arr1, arr2, time) {
     if (arr2.length === arr1.length) {
+
         // update score
         playerScore = Number(playerScore) + Number(1);
         $('#score h3').text(playerScore);

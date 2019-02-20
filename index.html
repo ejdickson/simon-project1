@@ -1,5 +1,6 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,65 +8,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/styles.css">
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script defer src="./js/functions.js"></script>
     <script defer src="./js/script.js"></script>
 </head>
+
 <body>
     <!-- Top fixed section -->
     <div class="main-flex">
-    <header>
-        <h1>SIMON</h1>
-        <!-- Left: Score (during game play) -->
-        <div id="score">
-            <!-- Text changes from "leaderboard" to user score during game play -->
-            <h3>TOP SCORE: </h3>
-            <!-- If click on "leaderboard", leaderboard pops up -->
-        </div>
-        <!-- Right: Menu -> Pause (during game play, drop down menu) -->
-        <!-- <div id ="menu"> -->
+        <header>
+            <h1>SIMON</h1>
+            <!-- Left: Score (during game play) -->
+            <div id="score">
+                <!-- Text changes from "leaderboard" to user score during game play -->
+                <h3>TOP SCORE: </h3>
+                <!-- If click on "leaderboard", leaderboard pops up -->
+            </div>
+            <!-- Right: Menu -> Pause (during game play, drop down menu) -->
+            <!-- <div id ="menu"> -->
             <!-- <h3>Rules</h3> -->
             <!-- Img changes from typical bar menu to pause button during game play -->
             <!-- <img src="./images/three-horizontal-bars.png" alt="MENU"> -->
-        <!-- </div> -->
-    </header>
+            <!-- </div> -->
+        </header>
 
-    <main>
-        <div class="gameboardContainer">
-        <section class="gameboard">
-            <!-- divs representing each of the four game buttons -->
-            <div class="greenButton">
-                <audio id="lightsaber" src='audio/Lightsaber Turn On-SoundBible.com-647586083.mp3'></audio>
-            </div>
-            
-            <div class="redButton">
-                <audio id="lasers" src='audio/Laser Blasts-SoundBible.com-108608437.mp3'></audio>
+        <main>
+            <div class="gameboardContainer">
+                <section class="gameboard">
+                    <!-- divs representing each of the four game buttons -->
+                    <div class="greenButton">
+                        <audio id="lightsaber" src='audio/Lightsaber Turn On-SoundBible.com-647586083.mp3'></audio>
+                    </div>
+
+                    <div class="redButton">
+                        <audio id="lasers" src='audio/Laser Blasts-SoundBible.com-108608437.mp3'></audio>
+                    </div>
+
+                    <div class="yellowButton">
+                        <audio id="chewie" src='audio/Chewbacca Wookie Noise-SoundBible.com-1201859158.mp3'></audio>
+                    </div>
+
+                    <div class="blueButton">
+                        <audio id="r2d2" src='audio/R2D2 Again-SoundBible.com-1304677791.mp3'></audio>
+                    </div>
+                </section>
             </div>
 
-            <div class="yellowButton">
-                <audio id="chewie" src='audio/Chewbacca Wookie Noise-SoundBible.com-1201859158.mp3'></audio>
-            </div>
+            <!-- buttons for level options -->
+            <button class="levels" id="easy">EASY</button>
+            <button class="levels" id="medium">MEDIUM</button>
+            <button class="levels" id="hard">HARD</button>
+        </main>
 
-            <div class="blueButton">
-                <audio id="r2d2" src='audio/R2D2 Again-SoundBible.com-1304677791.mp3'></audio>
-            </div>
-        </section>
-        </div>
-        
-        <!-- buttons for level options -->
-        <button class="levels" id="easy">EASY</button>
-        <button class="levels" id="medium">MEDIUM</button>
-        <button class="levels" id="hard">HARD</button>
-    </main>
-    
-    <footer>
-        <!-- Possible nav to rules, leaderboard, etc -->
-        <!-- Logo and personalization -->
-        <p>Created by <a href src='dickson-deisgns.com' alt ='dickson-designs.com'>Emma Dickson</a></p>
-    </footer>
+        <footer>
+            <!-- Possible nav to rules, leaderboard, etc -->
+            <!-- Logo and personalization -->
+            <p>Created by <a href src='dickson-deisgns.com' alt='dickson-designs.com'>Emma Dickson</a></p>
+        </footer>
     </div>
 </body>
+
 </html>

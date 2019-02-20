@@ -23,7 +23,6 @@ function playGame(time) {
     $('.greenButton').click(function() {
         lightGreen(time);
         playerArray.push(1);
-        console.log('player: ', playerArray);
         index = 0;
         checkArray(chainEvents, playerArray);
         if (playerArray.length === chainEvents.length) {
@@ -34,7 +33,6 @@ function playGame(time) {
     $('.redButton').click(function() {
         lightRed(time);
         playerArray.push(2);
-        console.log('player: ', playerArray);
         index = 0;
         checkArray(chainEvents, playerArray);
         if (playerArray.length === chainEvents.length) {
@@ -45,7 +43,6 @@ function playGame(time) {
     $('.yellowButton').click(function() {
         lightYellow(time);
         playerArray.push(3);
-        console.log('player: ', playerArray);
         index = 0;
         checkArray(chainEvents, playerArray);
         if (playerArray.length === chainEvents.length) {
@@ -56,7 +53,6 @@ function playGame(time) {
     $('.blueButton').click(function() {
         lightBlue(time);
         playerArray.push(4);
-        console.log('player: ', playerArray);
         index = 0;
         checkArray(chainEvents, playerArray);
         if (playerArray.length === chainEvents.length) {
