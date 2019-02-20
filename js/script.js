@@ -25,40 +25,24 @@ function playGame(time) {
         playerArray.push(1);
         index = 0;
         checkArray(chainEvents, playerArray);
-        if (playerArray.length === chainEvents.length) {
-            checkWinRound();
-            resetPlayer(playerArray);
-        };
     });
     $('.redButton').click(function() {
         lightRed(time);
         playerArray.push(2);
         index = 0;
         checkArray(chainEvents, playerArray);
-        if (playerArray.length === chainEvents.length) {
-            checkWinRound();
-            resetPlayer(playerArray);
-        };
     });
     $('.yellowButton').click(function() {
         lightYellow(time);
         playerArray.push(3);
         index = 0;
         checkArray(chainEvents, playerArray);
-        if (playerArray.length === chainEvents.length) {
-            checkWinRound();
-            resetPlayer(playerArray);
-        };
     });
     $('.blueButton').click(function() {
         lightBlue(time);
         playerArray.push(4);
         index = 0;
         checkArray(chainEvents, playerArray);
-        if (playerArray.length === chainEvents.length) {
-            checkWinRound();
-            resetPlayer(playerArray);
-        };
     });
     
 
