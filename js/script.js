@@ -14,6 +14,7 @@ $('#score h3').text(`TOP SCORE: ${highestScore}`);
 
 function playGame(time) {
 
+    
     // first move is made by Simon
 
     newRound(chainEvents, playerArray, time);
@@ -58,7 +59,6 @@ function playGame(time) {
     $('#easy').click(function() {
         $('#score h3').text(0);
         console.log('New Game');
-        resetGame(chainEvents, playerArray);
         playerScore = 0;
         playGame(easy);
     });
@@ -66,7 +66,6 @@ function playGame(time) {
     $('#medium').click(function() {
         $('#score h3').text(0);
         console.log('New Game');
-        resetGame(chainEvents, playerArray);
         playerScore = 0;
         playGame(medium);
     });
@@ -74,7 +73,6 @@ function playGame(time) {
     $('#hard').click(function() {
         $('#score h3').text(0);
         console.log('New Game');
-        resetGame(chainEvents, playerArray);
         playerScore = 0
         playGame(hard);
     });

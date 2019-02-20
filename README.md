@@ -34,4 +34,4 @@ The next update will be styled to keep with the Star Wars theme.
 A leaderboard to keep the top 3-5 scores will replace the single top score.
 A menu button to control the sound of the game will also be added.
 The rules will also be available in the menu.
-Allow user to start new game without refreshing the page.
+Allow user to start new game without refreshing the page. (Priority Update)
