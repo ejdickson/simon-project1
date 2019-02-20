@@ -82,11 +82,9 @@ let lightSimon = function(arr1) {
 // function: start new round
 
 let newRound = function(arr1, arr2, time) {
-    console.log(arr2)
     console.log('New ROUND')
     addSimon(arr1);
     lightSimon(arr1, time);
-    console.log("simon: ", arr1);
 }
 
 // function: compare every player's action to the chain of events created by Simon
@@ -99,7 +97,6 @@ let checkArray = function(arr1, arr2, time) {
             //game over
             console.log("one wrong move means Game Over");
             gameOver(playerScore, highestScore);
-            loser = true;
             return false;
         } else {
             console.log("Keep going!");
