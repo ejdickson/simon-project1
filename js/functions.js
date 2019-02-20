@@ -81,8 +81,7 @@ let lightSimon = function(arr1) {
 
 // function: start new round
 
-let newRound = function(arr1, arr2, time) {
-    console.log('New ROUND')
+let newRound = function(arr1, time) {
     addSimon(arr1);
     lightSimon(arr1, time);
 }
@@ -96,10 +95,8 @@ let checkArray = function(arr1, arr2, time) {
         if ((arr2[index]) !== (arr1[index])) {
             //game over
             console.log("one wrong move means Game Over");
-            gameOver(playerScore, highestScore);
+            gameOver(playerScore, highestScore, chainEvents, playerArray);
             return false;
-        } else {
-            console.log("Keep going!");
         }
         index++;
     } 
@@ -109,7 +106,7 @@ let checkArray = function(arr1, arr2, time) {
         if ((arr1[iarr1]) !== (arr2[iarr2])) {
             //game over
             console.log("one wrong move means Game Over");
-            gameOver(playerScore, highestScore);
+            gameOver(playerScore, highestScore, chainEvents, playerArray);
             return false;
         } else {
             console.log("Keep going!");
@@ -152,21 +149,26 @@ let resetGame = function(arr1, arr2) {
 // game over function
     // if player score > leaderboard score
 
-let gameOver = function(newScore, topScore) {
+let gameOver = function(newScore, topScore, arr1, arr2) {
     if (newScore > 10 && newScore > topScore) {
         alert("Game Over! New High Score! Try a harder level");
-        resetGame(chainEvents, playerArray);
+        resetGame(arr1, arr2);
+        newScore = 0;
     } else if (newScore > 10){
         alert("Game Over! Try a harder level!");
-        resetGame(chainEvents, playerArray);
+        resetGame(arr1, arr2);
+        newScore = 0;
     } else if (newScore > topScore){
         alert("Game Over! New High Score!");
-        resetGame(chainEvents, playerArray);
+        resetGame(arr1, arr2);
+        newScore = 0;
     } else if (newScore < 5) {
         alert("GAME OVER! Maybe try an easier level?");
-        resetGame(chainEvents, playerArray);
+        resetGame(arr1, arr2);
+        newScore = 0;
     } else {
         alert("Game Over!");
-        resetGame(chainEvents, playerArray);
+        resetGame(arr1, arr2, playerScore);
+        newScore = 0;
     }
 }

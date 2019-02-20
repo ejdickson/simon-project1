@@ -76,4 +76,16 @@ function playGame(time) {
         playerScore = 0
         playGame(hard);
     });
+    //if click Reset Game
+    $('#reset').click(function(chainEvents, playerArray, playerScore) {
+        $('#score h3').text(0);
+        var chainEvents = [];
+        var playerArray = [];
+        var playerScore = 0;
+        resetGame(chainEvents, playerArray);
+        console.log('after reset game')
+        console.log(chainEvents)
+        console.log(playerArray)
+
+    });
     
