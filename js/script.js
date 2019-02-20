@@ -5,7 +5,8 @@
 var chainEvents = [];
 var playerArray = [];
 var playerScore = 0;
-var gameOver = false;
+var highestScore = 0;
+var loser = false;
 
 function playGame(time) {
     // reset Simon Chain, Player Chain, and Player Score when starting a new game
@@ -71,25 +72,26 @@ function playGame(time) {
 // once choosen level, buttons are hidden
     // if easy function(time = 1000)
     $('#easy').click(function() {
-        $('.levels').hide();
         $('#score h3').text(0);
+        console.log('New Game');
+        resetGame(chainEvents, playerArray);
+        playerScore = 0;
         playGame(1000);
     });
     // if medium function(time = 500)
     $('#medium').click(function() {
-        $('.levels').hide();
         $('#score h3').text(0);
+        console.log('New Game');
+        resetGame(chainEvents, playerArray);
+        playerScore = 0;
         playGame(750);
     });
     // if hard function(time = 750)
     $('#hard').click(function() {
-        $('.levels').hide();
         $('#score h3').text(0);
+        console.log('New Game');
+        resetGame(chainEvents, playerArray);
+        playerScore = 0
         playGame(500);
     });
     
-
-
-// game over function
-    // if player score > lowest leaderboard score [leaderboard array/objects]
-        // add player score to leader board in position [maybe switch statement?]

@@ -1,5 +1,9 @@
 // one sheet of all the functions that will be called during game play
 
+// arr1 = chainEvents (Simon's array)
+// arr2 = playerArray (player actions array)
+// time = depends on level selected
+
 // function: one for each of the light & tone buttons
 
 let lightGreen = function(time) {
@@ -90,8 +94,8 @@ let checkArray = function(arr1, arr2, time) {
         if ((arr2[index]) !== (arr1[index])) {
             //game over
             console.log("one wrong move means Game Over");
-            gameOver = true;
-            alert("GAME OVER!")
+            gameOver(playerScore, highestScore);
+            loser = true;
             return false;
         } else {
             console.log("Keep going!");
@@ -105,16 +109,40 @@ let checkArray = function(arr1, arr2, time) {
 
 let checkWinRound = function(arr1, arr2, time) {
     if (arr2.length === arr1.length) {
-            // update score
-            playerScore = Number(playerScore) + Number(1);
-            $('#score h3').text(playerScore);
-            console.log("Score updated. Keep going!");
-            resetPlayer(arr2);
-            newRound(arr1, arr2, time);
-                
+        // update score
+        playerScore = Number(playerScore) + Number(1);
+        $('#score h3').text(playerScore);
+        console.log("Score updated. Keep going!");
+            
+        // reset player chain and add another round of Simon
+        resetPlayer(arr2);
+        newRound(arr1, arr2, time);
     }
 }
 
+// reset Player array after each round
+
 let resetPlayer = function(arr2) {
-    arr2.splice(0,arr2.length)
+    arr2.splice(0,arr2.length);
+}
+
+
+// reset both Simon and Player arrays to start a new Game
+
+let resetGame = function(arr1, arr2) {
+    arr1.splice(0,arr1.length);
+    arr2.splice(0,arr2.length);
+}
+
+
+// game over function
+    // if player score > lowest leaderboard score [leaderboard array/objects]
+        // add player score to leader board in position [maybe switch statement?]
+
+let gameOver = function(newScore, topScore) {
+    if (newScore > topScore) {
+        alert("New High Score! Try a harder level")
+    } else {
+        alert("GAME OVER! Maybe try an easier level?")
+    }
 }
