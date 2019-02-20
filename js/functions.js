@@ -146,8 +146,10 @@ let resetGame = function(arr1, arr2) {
 
 let gameOver = function(newScore, topScore) {
     if (newScore > topScore) {
-        alert("New High Score! Try a harder level")
+        alert("Game Over! New High Score! Try a harder level");
+    } else if (newScore < 5) {
+        alert("GAME OVER! Maybe try an easier level?");
     } else {
-        alert("GAME OVER! Maybe try an easier level?")
+        alert("Game Over!");
     }
 }
