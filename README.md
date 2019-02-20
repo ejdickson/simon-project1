@@ -7,7 +7,7 @@ This web app is based on the electronic memory game, Simon. Simon has been made 
 
 
 
-Link to Deployed App
+https://romantic-noyce-22c5fa.netlify.com/
 
 
 ---
