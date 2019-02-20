@@ -48,7 +48,6 @@ let lightBlue = function(time) {
  let addSimon = function(arr1) {
     let nextLight = ((Math.floor(Math.random() * 4) + 1));
     arr1.push(nextLight);
-    // return;
 }
 
 // function: Simon actions (light & tone i for time)
@@ -72,62 +71,14 @@ let lightSimon = function(arr1, time) {
     }
 }
 
-// function: take player actions and input to an array that can be compared to chain of events
-// let index = 0;
-
-// let playerAction = function(arr1, arr2, time) {
-    // $('.greenButton').click(function() {
-    //     lightGreen(time);
-    //     arr2.push(1);
-    //     console.log('player: ', arr2);
-    //     index = 0;
-    //     checkArray(arr1, arr2);
-    //     if (playerArray.length === chainEvents.length) {
-    //         checkWin();
-    //     };
-    // });
-    // $('.redButton').click(function() {
-    //     lightRed(time);
-    //     arr2.push(2);
-    //     console.log('player: ', arr2);
-    //     index = 0;
-    //     checkArray(arr1, arr2);
-    //     if (playerArray.length === chainEvents.length) {
-    //         checkWin();
-    //     };
-    // });
-    // $('.yellowButton').click(function() {
-    //     lightYellow(time);
-    //     arr2.push(3);
-    //     console.log('player: ', arr2);
-    //     index = 0;
-    //     checkArray(arr1, arr2);
-    //     if (playerArray.length === chainEvents.length) {
-    //         checkWin();
-    //     };
-    // });
-    // $('.blueButton').click(function() {
-    //     lightBlue(time);
-    //     arr2.push(4);
-    //     console.log('player: ', arr2);
-    //     index = 0;
-    //     checkArray(arr1, arr2);
-    //     if (playerArray.length === chainEvents.length) {
-    //         checkWin();
-    //     };
-    // });
-// }
-
 // function: start new round
 
 let newRound = function(arr1, arr2, time) {
-
+    console.log(arr2)
     console.log('New ROUND')
     addSimon(arr1);
     lightSimon(arr1, time);
     console.log("simon: ", arr1);
-
-    // playerAction(arr1, arr2, time);
 }
 
 // function: compare player's action to the chain of events created by Simon
@@ -144,7 +95,7 @@ let checkArray = function(arr1, arr2, time) {
             return false;
         } else {
             console.log("Keep going!");
-            checkWin(arr1, arr2, time);
+            checkWinRound(arr1, arr2, time);
         }
         index++;
     } 
@@ -152,14 +103,18 @@ let checkArray = function(arr1, arr2, time) {
     return true;
 }
 
-let checkWin = function(arr1, arr2, time) {
-    if (playerArray.length === chainEvents.length) {
+let checkWinRound = function(arr1, arr2, time) {
+    if (arr2.length === arr1.length) {
             // update score
             playerScore = Number(playerScore) + Number(1);
             $('#score h3').text(playerScore);
             console.log("Score updated. Keep going!");
-
+            resetPlayer(arr2);
             newRound(arr1, arr2, time);
                 
     }
+}
+
+let resetPlayer = function(arr2) {
+    arr2.splice(0,arr2.length)
 }

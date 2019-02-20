@@ -13,7 +13,7 @@ function playGame(time) {
     // first move
     newRound(chainEvents, playerArray, time);
 
-    // check check player moves against Simon moves
+    // log player moves
 
     $('.greenButton').click(function() {
         lightGreen(time);
@@ -22,7 +22,8 @@ function playGame(time) {
         index = 0;
         checkArray(chainEvents, playerArray);
         if (playerArray.length === chainEvents.length) {
-            checkWin();
+            checkWinRound();
+            resetPlayer(playerArray);
         };
     });
     $('.redButton').click(function() {
@@ -32,7 +33,8 @@ function playGame(time) {
         index = 0;
         checkArray(chainEvents, playerArray);
         if (playerArray.length === chainEvents.length) {
-            checkWin();
+            checkWinRound();
+            resetPlayer(playerArray);
         };
     });
     $('.yellowButton').click(function() {
@@ -42,7 +44,8 @@ function playGame(time) {
         index = 0;
         checkArray(chainEvents, playerArray);
         if (playerArray.length === chainEvents.length) {
-            checkWin();
+            checkWinRound();
+            resetPlayer(playerArray);
         };
     });
     $('.blueButton').click(function() {
@@ -52,7 +55,8 @@ function playGame(time) {
         index = 0;
         checkArray(chainEvents, playerArray);
         if (playerArray.length === chainEvents.length) {
-            checkWin();
+            checkWinRound();
+            resetPlayer(playerArray);
         };
     });
     
