@@ -22,6 +22,11 @@ body {
     height: 20px;
 } */
 
+.gameboardContainer {
+    display: flex;
+    justify-content: center;
+}
+
 .gameboard {
     grid-column: 2;
     grid-row: 2;
@@ -31,6 +36,10 @@ body {
     grid-column-gap: 5px;
     grid-row-gap: 5px;
     padding: 20px;
+}
+
+h1, h3 {
+    text-align: center;
 }
 
 .redButton.bright {
