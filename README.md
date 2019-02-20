@@ -30,6 +30,7 @@ https://trello.com/b/CCZIcDem/simon-project-1
 
 ### Ideas for Next Update
 
-The next update will be styled to keep with the theme.
+The next update will be styled to keep with the Star Wars theme.
 A leaderboard to keep the top 3-5 scores will replace the single top score.
 A menu button to control the sound of the game will also be added.
+The rules will also be available in the menu.

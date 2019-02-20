@@ -1,12 +1,13 @@
 body {
     background-color: rgba(30, 50, 70, 1);
+    font-size: 30px;
     color: rgba(255, 255, 255, 1);
-    display: grid;
-    grid-template-areas: 
+    /* display: grid; */
+    /* grid-template-areas: 
     "#leaderboard 10fr #menu",
     "1fr .gameboard 1fr",
     "1fr levels 1fr";
-    justify-items: center;
+    justify-items: center; */
 }
 
 /* #menu {
@@ -69,4 +70,12 @@ body {
     background: rgba(0, 0, 190, 1);
     border-radius: 5px;
     border-bottom-right-radius: 100%;
+}
+
+.levels {
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;
+    background:  rgba(100, 100, 100, 1);
+    padding: 16px 32px;
+    border-radius: 12px;
 }
