@@ -10,7 +10,7 @@ var easy = 1000;
 var medium = 750;
 var hard = 500;
 
-$('#score h3').text(`Top Score: ${highestScore}`);
+$('#score h3').text(`TOP SCORE: ${highestScore}`);
 
 function playGame(time) {
 
